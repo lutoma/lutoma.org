@@ -4,9 +4,7 @@
 
 		<div class="nav-center">
 			<ul>
-				<li><n-link to="/about">About</n-link></li>
 				<li><n-link to="/photos">Photography</n-link></li>
-				<li><n-link to="/code">Code</n-link></li>
 				<li><n-link to="/contact">Contact</n-link></li>
 			</ul>
 		</div>
