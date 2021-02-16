@@ -52,6 +52,7 @@ export default {
 		proIcons: {
 			regular: [
 				'faSpinnerThird',
+				'faLock',
 			],
 			light: [
 				'faMapMarkedAlt',
