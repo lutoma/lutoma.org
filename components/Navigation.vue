@@ -1,25 +1,58 @@
 <template>
-	<nav>
-		<n-link to="/"><h1>lutoma</h1></n-link>
+	<nav v-click-outside="closeMobileMenu">
+		<div class="mobile-visible">
+			<n-link to="/"><h1>lutoma</h1></n-link>
 
-		<div class="nav-center">
-			<ul>
-				<li><n-link to="/photos">Photography</n-link></li>
-				<li><n-link to="/contact">Contact</n-link></li>
-			</ul>
+			<div :class="{'burger-button': true, open: showMobileMenu}" v-on:click="toggleMobileMenu">☰</div>
 		</div>
 
-		<ul class="social">
-			<li><a href="https://github.com/lutoma" rel="noopener" target="_blank"><fa :icon="['fab', 'github']" /></a></li>
-			<li><a href="https://twitter.com/lutoma" rel="noopener" target="_blank"><fa :icon="['fab', 'twitter']" /></a></li>
-			<li><a href="https://instagram.com/lutoma123" rel="noopener" target="_blank"><fa :icon="['fab', 'instagram']" /></a></li>
-			<li><a href="https://500px.com/p/lutoma" rel="noopener" target="_blank"><fa :icon="['fab', '500px']" /></a></li>
-			<li><a href="https://chaos.social/@lutoma" rel="noopener" target="_blank"><fa :icon="['fab', 'mastodon']" /></a></li>
-		</ul>
+		<div :class="{'nav-content': true, 'nav-content-show-mobile': showMobileMenu}">
+			<div class="nav-center">
+				<ul>
+					<li><n-link to="/photos" v-on:click.native="closeMobileMenu">Photography</n-link></li>
+					<li><n-link to="/contact" v-on:click.native="closeMobileMenu">Contact</n-link></li>
+				</ul>
+			</div>
+
+			<div class="social">
+				<ul>
+					<li><a href="https://github.com/lutoma" rel="noopener" target="_blank"><fa :icon="['fab', 'github']" /></a></li>
+					<li><a href="https://twitter.com/lutoma" rel="noopener" target="_blank"><fa :icon="['fab', 'twitter']" /></a></li>
+					<li><a href="https://instagram.com/lutoma123" rel="noopener" target="_blank"><fa :icon="['fab', 'instagram']" /></a></li>
+					<li><a href="https://500px.com/p/lutoma" rel="noopener" target="_blank"><fa :icon="['fab', '500px']" /></a></li>
+					<li><a href="https://chaos.social/@lutoma" rel="noopener" target="_blank"><fa :icon="['fab', 'mastodon']" /></a></li>
+				</ul>
+			</div>
+		</div>
 	</nav>
 </template>
 
+<script>
+import vClickOutside from 'v-click-outside'
+
+export default {
+	directives: {
+		clickOutside: vClickOutside.directive
+	},
+	data() {
+		return {
+			showMobileMenu: false
+		}
+	},
+	methods: {
+		toggleMobileMenu(ev) {
+			this.showMobileMenu = !this.showMobileMenu
+		},
+		closeMobileMenu(ev) {
+			this.showMobileMenu = false
+		}
+	}
+}
+</script>
+
 <style lang="scss">
+$collapse-size: 700px;
+
 nav {
 	position: fixed;
 	top: 0;
@@ -32,8 +65,25 @@ nav {
 
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	flex-wrap: wrap;
+
 	padding: 0 20px;
+
+	@media screen and (max-width: $collapse-size) {
+		padding: 0 10px;
+	}
+
+	.mobile-visible {
+		display: flex;
+		flex-direction: row;
+		min-height: 60px;
+		align-items: center;
+
+		@media screen and (max-width: $collapse-size) {
+			flex-basis: 100%;
+		}
+	}
+
 
 	h1 {
 		font-weight: 300;
@@ -42,30 +92,92 @@ nav {
 		text-decoration: none;
 	}
 
-	.nav-center {
+	.burger-button {
+		display: none;
+		border: 0;
+		background: transparent;
+		font-size: 1.5rem;
+		padding-left: 30px;
 		flex-grow: 1;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+		text-align: right;
+		cursor: pointer;
 
-	ul {
-		justify-self: center;
-		display: flex;
-		flex-direction: row;
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
+		&.open {
+			color: #2683E4;
+		}
 
-		li {
-			margin-right: 25px;
-			font-weight: 600;
+		@media screen and (max-width: $collapse-size) {
+			display: block;
 		}
 	}
 
-	.social {
-		a {
-			color: black;
+	.nav-content {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		@media screen and (max-width: $collapse-size) {
+			display: none;
+			padding-top: 1rem;
+			padding-bottom: .5rem;
+			flex-wrap: wrap;
+			border-top: 1px solid #000;
+			border-bottom: 1px solid #000;
+		}
+
+
+		&.nav-content-show-mobile {
+			display: flex;
+		}
+
+		.nav-center {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			@media screen and (max-width: $collapse-size) {
+				flex-basis: 100%;
+
+				ul {
+					flex-direction: column;
+					align-items: center;
+					font-size: 1.3rem;
+
+					li {
+						padding-bottom: .25rem;
+					}
+				}
+			}
+		}
+
+		ul {
+			justify-self: center;
+			display: flex;
+			flex-direction: row;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				margin-right: 25px;
+				font-weight: 600;
+			}
+		}
+
+		.social {
+			a {
+				color: black;
+			}
+
+			@media screen and (max-width: $collapse-size) {
+				flex-basis: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding-top: 1rem;
+			}
 		}
 	}
 }

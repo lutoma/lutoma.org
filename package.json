@@ -25,6 +25,9 @@
     "vue-masonry-wall": "^0.3.1"
   },
   "devDependencies": {
-    "vue-cool-lightbox": "^2.7.1"
+    "add": "^2.0.6",
+    "v-click-outside": "^3.1.2",
+    "vue-cool-lightbox": "^2.7.1",
+    "yarn": "^1.22.10"
   }
 }
