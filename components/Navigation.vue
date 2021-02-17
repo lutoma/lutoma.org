@@ -1,7 +1,7 @@
 <template>
 	<nav v-click-outside="closeMobileMenu">
 		<div class="mobile-visible">
-			<n-link to="/"><h1>lutoma</h1></n-link>
+			<n-link to="/" v-on:click.native="scrollToTop"><h1>lutoma</h1></n-link>
 
 			<div :class="{'burger-button': true, open: showMobileMenu}" v-on:click="toggleMobileMenu">☰</div>
 		</div>
@@ -40,6 +40,9 @@ export default {
 		}
 	},
 	methods: {
+		scrollToTop() {
+			window.scroll({top: 0, left: 0, behavior: 'smooth'})
+		},
 		toggleMobileMenu(ev) {
 			this.showMobileMenu = !this.showMobileMenu
 		},
