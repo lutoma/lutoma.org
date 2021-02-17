@@ -166,6 +166,7 @@ nav {
 			li {
 				margin-right: 25px;
 				font-weight: 600;
+				margin-bottom: 0;
 			}
 		}
 
