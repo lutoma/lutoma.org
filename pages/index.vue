@@ -1,7 +1,7 @@
 <template>
 	<div class="index">
 		<div class="intro">
-			<h1>Hello, I'm<br />Lukas&nbsp;Martini.</h1><br />
+			<h1>Hello, I'm<br />Lukas Martini.</h1><br />
 		</div>
 		<PhotoGrid v-if="album" :photos="album.photos" />
 	</div>
@@ -41,13 +41,25 @@ export default {
 		margin-top: 3.5rem;
 		margin-left: 3.5rem;
 		border: 1px solid #000;
-		background: white;
+		background: #f9f9f9;
 		padding: 10px 20px;
+
+		@media screen and (max-width: 800px) {
+			position: relative;
+			margin: 0;
+			background: initial;
+			border: none;
+			padding: 2rem 5vw;
+		}
 
 		h1 {
 			display: inline-block;
 			font-size: 3rem;
 			margin: 0;
+
+			@media screen and (max-width: 800px) {
+				font-size: 2.3rem;
+			}
 		}
 	}
 

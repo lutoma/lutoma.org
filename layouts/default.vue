@@ -23,6 +23,10 @@ export default {
 
 .main-container {
 	padding: 3rem 10vw;
+
+	@media screen and (max-width: 800px) {
+		padding: 2rem 5vw;
+	}
 }
 </style>
 
