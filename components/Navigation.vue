@@ -64,13 +64,19 @@ nav {
 
 	width: 100vw;
 	min-height: 60px;
-	background: white;
+	background: black;
+	color: white;
 
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 
 	padding: 0 20px;
+
+	@supports (backdrop-filter: blur(10px)) {
+		background: rgba(0, 0, 0, 0.85);
+		backdrop-filter: blur(10px);
+	}
 
 	@media screen and (max-width: $collapse-size) {
 		padding: 0 10px;
@@ -91,7 +97,7 @@ nav {
 	h1 {
 		font-weight: 300;
 		margin: 0;
-		color: black;
+		color: white;
 		text-decoration: none;
 	}
 
@@ -125,8 +131,7 @@ nav {
 			padding-top: 1rem;
 			padding-bottom: .5rem;
 			flex-wrap: wrap;
-			border-top: 1px solid #000;
-			border-bottom: 1px solid #000;
+			border-top: 1px solid #fff;
 		}
 
 
@@ -149,7 +154,7 @@ nav {
 					font-size: 1.3rem;
 
 					li {
-						padding-bottom: .25rem;
+						padding-bottom: .5rem;
 					}
 				}
 			}
@@ -172,7 +177,7 @@ nav {
 
 		.social {
 			a {
-				color: black;
+				color: white;
 			}
 
 			@media screen and (max-width: $collapse-size) {
