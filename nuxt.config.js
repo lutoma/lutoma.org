@@ -19,6 +19,8 @@ export default {
 	css: [
 	],
 
+	loading: { color: '#fff' },
+
 	script: [
 
 	],
