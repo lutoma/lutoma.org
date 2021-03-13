@@ -35,9 +35,10 @@
 	}
 
 	.meta {
-		margin-top: 1.5rem;
+		margin-top: 1rem;
 		font-weight: 300;
 		list-style-type: none;
+		padding-left: 0;
 
 		li {
 			display: inline;

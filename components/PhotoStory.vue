@@ -17,6 +17,12 @@
 .photo-story {
 	padding: 0 10vw;
 
+
+	@media screen and (max-width: 800px) {
+		padding: 0 20px;
+	}
+
+
 	&, & figure {
 		display: flex;
 		flex-direction: column;
@@ -27,6 +33,15 @@
 		width: 80vw;
 		padding-top: 4rem;
 		padding-bottom: 1rem;
+
+		@media screen and (max-width: 800px) {
+			width: 100%;
+			padding-top: 1rem;
+
+			&:nth-of-type(1) {
+				padding-top: 3rem;
+			}
+		}
 
 		img {
 			width: 100%;

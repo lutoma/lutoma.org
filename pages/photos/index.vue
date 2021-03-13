@@ -44,6 +44,11 @@ export default {
 	li {
 		margin-right: 35px;
 		margin-bottom: 35px;
+
+		@media screen and (max-width: 800px) {
+			width :100%;
+			margin-right: 0;
+		}
 	}
 
 	div {
@@ -70,6 +75,12 @@ export default {
 		font-weight: 300;
 		font-style: italic;
 		font-size: 1.8rem;
+
+		@media screen and (max-width: 800px) {
+			width: 100%;
+			height: 200px;
+		}
+
 
 		a {
 			color: white;
