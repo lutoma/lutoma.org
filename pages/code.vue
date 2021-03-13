@@ -17,8 +17,8 @@
 			</ul>
 
 			<ul class="links">
-				<li><a href="https://xelix.org">Project homepage &amp; documentation</a></li>
-				<li><a href="https://github.com/lutoma/xelix"><fa :icon="['fab', 'github']" /> Github</a></li>
+				<li><a href="https://xelix.org" rel="noopener" target="_blank">Project homepage &amp; documentation</a></li>
+				<li><a href="https://github.com/lutoma/xelix" rel="nofollow noopener" target="_blank"><fa :icon="['fab', 'github']" /> Github</a></li>
 			</ul>
 		</div>
 
@@ -29,7 +29,7 @@
 			<p>Undercurrent is a pre-alpha GTK3 Linux client for the TIDAL music streaming service. It is written in Python using PyGObject with GTK and GStreamer.</p>
 
 			<ul class="links">
-				<li><a href="https://github.com/lutoma/undercurrent"><fa :icon="['fab', 'github']" /> Github</a></li>
+				<li><a href="https://github.com/lutoma/undercurrent" rel="nofollow noopener" target="_blank"><fa :icon="['fab', 'github']" /> Github</a></li>
 			</ul>
 		</div>
 	</div>
