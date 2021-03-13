@@ -10,6 +10,7 @@
 			<div class="nav-center">
 				<ul>
 					<li><n-link to="/photos" v-on:click.native="closeMobileMenu">Photography</n-link></li>
+					<li><n-link to="/code" v-on:click.native="closeMobileMenu">Code</n-link></li>
 					<li><n-link to="/contact" v-on:click.native="closeMobileMenu">Contact</n-link></li>
 				</ul>
 			</div>
