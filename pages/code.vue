@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="code">
 		<h1>Code</h1>
 		<div class="project">
 			<h2>Xelix</h2>
@@ -36,38 +36,40 @@
 </template>
 
 <style lang="scss">
-.project {
-	margin-bottom: 2rem;
+.code {
+	.project {
+		margin-bottom: 2rem;
 
-	// Might want to replace clearfix with flexbox
-	&::after {
-		content: "";
-		clear: both;
-		display: table;
+		// Might want to replace clearfix with flexbox
+		&::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
 	}
-}
 
-.links {
-	margin-top: 2rem;
-	list-style-type: none;
-	padding: 0;
+	.links {
+		margin-top: 2rem;
+		list-style-type: none;
+		padding: 0;
 
-	li {
-		margin-bottom: 10px;
+		li {
+			margin-bottom: 10px;
+		}
 	}
-}
 
-img {
-	float: right;
-	max-height: 500px;
-	max-width: 50vw;
-	padding-left: 30px;
-	padding-bottom: 30px;
+	img {
+		float: right;
+		max-height: 500px;
+		max-width: 50vw;
+		padding-left: 30px;
+		padding-bottom: 30px;
 
-	@media screen and (max-width: 1024px) {
-		float: none;
-		padding-left: 0;
-		max-width: 100%;
+		@media screen and (max-width: 1024px) {
+			float: none;
+			padding-left: 0;
+			max-width: 100%;
+		}
 	}
 }
 </style>
