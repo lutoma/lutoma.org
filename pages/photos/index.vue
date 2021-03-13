@@ -76,6 +76,11 @@ export default {
 		font-style: italic;
 		font-size: 1.8rem;
 
+		@media screen and (min-width: 1024px) {
+			max-width: 23vw;
+			max-height: 23vw;
+		}
+
 		@media screen and (max-width: 800px) {
 			width: 100%;
 			height: 200px;
