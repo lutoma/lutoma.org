@@ -59,6 +59,7 @@ export default {
 			regular: [
 				'faSpinnerThird',
 				'faLock',
+				'faBook',
 			],
 			light: [
 				'faMapMarkedAlt',

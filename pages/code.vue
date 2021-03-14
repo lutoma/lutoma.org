@@ -3,6 +3,16 @@
 		<h1>Code</h1>
 		<div class="project">
 			<h2>Xelix</h2>
+			<ul class="languages">
+				<li>C</li>
+				<li>x86 Assembly</li>
+			</ul>
+
+			<ul class="links">
+				<li><a href="https://github.com/lutoma/xelix" rel="nofollow noopener" target="_blank"><fa :icon="['fab', 'github']" /> Github</a></li>
+				<li><a href="https://xelix.org" rel="noopener" target="_blank"><fa :icon="['far', 'book']" /> Docs</a></li>
+			</ul>
+
 			<a :href="require('~/assets/xelix.png')" target="_blank"><img src="~assets/xelix.png" /></a>
 
 			<p>Xelix is a hobby POSIX-like kernel and operating system for x86. It is written in C, has a largely GNU-based userland and can run many common *nix programs.</p>
@@ -15,22 +25,21 @@
 				<li>A userland graphics compositor and window manager using Cairo and freetype2</li>
 				<li>BSD socket API for TCP/IP support using the <a href="https://picotcp.altran.be/" rel="nofollow noopener" target="_blank">PicoTCP</a> network stack</li>
 			</ul>
-
-			<ul class="links">
-				<li><a href="https://xelix.org" rel="noopener" target="_blank">Project homepage &amp; documentation</a></li>
-				<li><a href="https://github.com/lutoma/xelix" rel="nofollow noopener" target="_blank"><fa :icon="['fab', 'github']" /> Github</a></li>
-			</ul>
 		</div>
 
 		<div class="project">
 			<h2>Undercurrent</h2>
-			<a :href="require('~/assets/undercurrent.png')" target="_blank"><img src="~assets/undercurrent.png" /></a>
-
-			<p>Undercurrent is a pre-alpha GTK3 Linux client for the TIDAL music streaming service. It is written in Python using PyGObject with GTK and GStreamer.</p>
+			<ul class="languages">
+				<li>Python</li>
+			</ul>
 
 			<ul class="links">
 				<li><a href="https://github.com/lutoma/undercurrent" rel="nofollow noopener" target="_blank"><fa :icon="['fab', 'github']" /> Github</a></li>
 			</ul>
+
+			<a :href="require('~/assets/undercurrent.png')" target="_blank"><img src="~assets/undercurrent.png" /></a>
+
+			<p>Undercurrent is a pre-alpha GTK3 Linux client for the TIDAL music streaming service. It is written in Python 3 using PyGObject with GTK and GStreamer.</p>
 		</div>
 	</div>
 </template>
@@ -62,26 +71,62 @@ export default {
 		}
 	}
 
-	.links {
-		margin-top: 2rem;
+	.languages, .links {
 		list-style-type: none;
 		padding: 0;
+		display: inline-block;
+		margin-top: .5rem;
+		margin-bottom: 1rem;
+
+		@media screen and (max-width: 800px) {
+			display: block;
+			margin-bottom: .5rem;
+		}
 
 		li {
-			margin-bottom: 10px;
+			display: inline-block;
+			margin-right: .2rem;
+		}
+	}
+
+	.languages {
+		li {
+			padding: 2px 8px;
+
+			background: black;
+			border-radius: 1rem;
+
+			color: white;
+			font-weight: bold;
+			font-size: .9rem;
+		}
+	}
+
+	.links {
+		list-style-type: none;
+		margin-left: 1rem;
+
+		@media screen and (max-width: 800px) {
+			margin-left: 0;
+			margin-bottom: 1rem;
+		}
+
+		li {
+			margin-right: 1rem;
 		}
 	}
 
 	img {
 		float: right;
-		max-height: 500px;
-		max-width: 50vw;
-		padding-left: 30px;
-		padding-bottom: 30px;
+		max-width: 200px;
+		max-width: m#{i}n(50vw, 800px);
+		padding-left: 3rem;
+		padding-bottom: 3rem;
 
 		@media screen and (max-width: 1024px) {
 			float: none;
 			padding-left: 0;
+			padding-bottom: 2rem;
 			max-width: 100%;
 		}
 	}
