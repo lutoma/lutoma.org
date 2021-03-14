@@ -40,6 +40,7 @@ export default {
 
 	modules: [
 		'@nuxtjs/axios',
+		['nuxt-matomo', { matomoUrl: '//stats.fnordserver.eu/', siteId: 3, onMetaChange: true }],
 	],
 
 	buildModules: [
