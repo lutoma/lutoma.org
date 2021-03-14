@@ -7,7 +7,7 @@
 				<vue-masonry-wall :items="gridPhotos" :options="{padding: 1.5}">
 					<template v-slot:default="{item}">
 						<div class="item">
-							<img :src="`https://api.lutoma.org${item.photo.formats.small.url}`" @click="index = item.lightbox_index" />
+							<img :src="`${$axios.defaults.baseURL}${item.photo.formats.small.url}`" @click="index = item.lightbox_index" />
 						</div>
 					</template>
 				</vue-masonry-wall>
@@ -72,10 +72,10 @@ export default {
 		gridPhotos.forEach((item, i) => {
 			gridPhotos[i].lightbox_index = i;
 			lightboxPhotos.push({
-				src: `https://api.lutoma.org${item.photo.url}`,
+				src: `${this.$axios.defaults.baseURL}${item.photo.url}`,
 				title: item.title,
 				description: item.description,
-				thumb: `https://api.lutoma.org${item.photo.formats.small.url}`,
+				thumb: `${this.$axios.defaults.baseURL}${item.photo.formats.small.url}`,
 			})
 		})
 

@@ -8,7 +8,7 @@
 			<ul class="album-list">
 				<li v-for="item of group.entries" :key="item.id">
 					<n-link :to="`/photos/${item.album.slug}`">
-						<div v-if="item.preview" :style="{backgroundImage: `url(https://api.lutoma.org${item.preview.formats.medium.url})`}">{{ item.album.title }}</div>
+						<div v-if="item.preview" :style="{backgroundImage: `url(${$axios.defaults.baseURL}${item.preview.formats.medium.url})`}">{{ item.album.title }}</div>
 						<div v-if="!item.preview">{{ item.album.title }}</div>
 					</n-link>
 				</li>

@@ -2,7 +2,7 @@
 	<div class="photo-story">
 		<figure class="photo-wrapper" v-for="item of photos" :key="item.id" :id="`p${item.id}`">
 			<img
-				v-lazy="`https://api.lutoma.org${ item.photo.url }`"
+				v-lazy="`${$axios.defaults.baseURL}${ item.photo.url }`"
 				:data-srcset="buildSrcSet(item.photo)"
 				:sizes="buildSizes(item.photo)"
 				:alt="item.description"
@@ -83,10 +83,10 @@ export default {
 
 			let sources = []
 			for(let fmt of Object.values(formats)) {
-				sources.push(`https://api.lutoma.org${fmt.url} ${fmt.width}w`)
+				sources.push(`${this.$axios.defaults.baseURL}${fmt.url} ${fmt.width}w`)
 			}
 
-			sources.push(`https://api.lutoma.org${photo.url} ${photo.width}w`)
+			sources.push(`${this.$axios.defaults.baseURL}${photo.url} ${photo.width}w`)
 			return sources.join(', ');
 		},
 		buildSizes(photo) {
