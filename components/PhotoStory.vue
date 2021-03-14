@@ -57,6 +57,10 @@
 			height: auto !important;
 		}
 
+		img[lazy=loading] {
+			background: url(~assets/loading.svg) no-repeat center center;
+		}
+
 		figcaption {
 			margin-top: 1.5rem;
 			font-size: 1.1rem;

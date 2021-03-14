@@ -95,7 +95,6 @@ export default {
 		}
 
 		if(this.album.photos.length >= 1) {
-			console.log(this.album.photos[0])
 			const content = `${this.$axios.defaults.baseURL}${this.album.photos[0].photo.formats.large.url}`
 			meta.push(
 				{ hid: 'og:image', property: 'og:image', content },
