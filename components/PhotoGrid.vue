@@ -3,13 +3,15 @@
 		<CoolLightBox :items="lightboxPhotos" :index="index" @close="index = null" :slideshow="false" />
 
 		<div class="photo-grid">
-			<vue-masonry-wall :items="gridPhotos" :options="{padding: 1.5}">
-				<template v-slot:default="{item}">
-					<div class="item">
-						<img :src="`https://api.lutoma.org${item.photo.formats.small.url}`" @click="index = item.lightbox_index" />
-					</div>
-				</template>
-			</vue-masonry-wall>
+			<no-ssr>
+				<vue-masonry-wall :items="gridPhotos" :options="{padding: 1.5}">
+					<template v-slot:default="{item}">
+						<div class="item">
+							<img :src="`https://api.lutoma.org${item.photo.formats.small.url}`" @click="index = item.lightbox_index" />
+						</div>
+					</template>
+				</vue-masonry-wall>
+			</no-ssr>
 		</div>
 	</div>
 </template>
