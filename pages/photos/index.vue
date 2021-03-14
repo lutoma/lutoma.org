@@ -28,6 +28,16 @@ export default {
 
 		return { alist }
 	},
+
+	head () {
+		const title = 'Photography — lutoma'
+		const meta = [
+			{ hid: 'og:title', property: 'og:title', content: title },
+			{ hid: 'twitter:title', name: 'twitter:title', content: title },
+		]
+
+		return { title, meta }
+	}
 }
 </script>
 

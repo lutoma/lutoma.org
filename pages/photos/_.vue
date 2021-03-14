@@ -78,5 +78,32 @@ export default {
 
 		return { album: albums[0] }
 	},
+
+	head () {
+		const title = `${this.album.title} — lutoma`
+		const meta = [
+			{ hid: 'og:title', property: 'og:title', content: title },
+			{ hid: 'twitter:title', name: 'twitter:title', content: title },
+		]
+
+		if(this.album.description) {
+			meta.push(
+				{ hid: 'description', name: 'description', content: this.album.description },
+				{ hid: 'og:description', property: 'og:description', content: this.album.description },
+				{ hid: 'twitter:description', name: 'twitter:description', content: this.album.description }
+			)
+		}
+
+		if(this.album.photos.length >= 1) {
+			console.log(this.album.photos[0])
+			const content = `${this.$axios.defaults.baseURL}${this.album.photos[0].photo.formats.large.url}`
+			meta.push(
+				{ hid: 'og:image', property: 'og:image', content },
+				{ hid: 'twitter:image', name: 'twitter:image', content },
+			)
+		}
+
+		return { title, meta }
+	}
 }
 </script>
