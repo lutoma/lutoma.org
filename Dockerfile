@@ -1,4 +1,5 @@
 FROM node:15
+ARG FONTAWESOME_AUTH_TOKEN
 WORKDIR /code
 
 COPY ./package.json ./
