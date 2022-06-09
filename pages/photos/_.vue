@@ -1,9 +1,9 @@
 <template>
 	<div class="album">
 		<h1 v-if="album.title">{{ album.title }}</h1>
-		<p class="desc" v-if="album.description">{{ album.description }}</p>
+		<div class="desc" v-if="album.description" v-html="description_html" />
 		<ul class="meta" v-if="album.license || album.location">
-			<li v-if="album.license == 'cc-by'">
+			<li v-if="album.license == 'ccby'">
 				<fa :icon="['fal', 'file-contract']" /> <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener" target="_blank">Creative Commons CC-BY 4.0</a>
 			</li>
 			<li v-if="album.location">
@@ -54,6 +54,7 @@
 
 
 <script>
+import { marked } from 'marked'
 import PhotoGrid from '~/components/PhotoGrid'
 import PhotoStory from '~/components/PhotoStory'
 
@@ -63,6 +64,7 @@ export default {
 		PhotoGrid,
 		PhotoStory
 	},
+
 
 	async asyncData({ route, error, $axios, app }) {
 		const api_path = `/albums?_limit=1&slug=${route.params.pathMatch}`
@@ -76,7 +78,10 @@ export default {
 			return {}
 		}
 
-		return { album: albums[0] }
+		return {
+			album: albums[0],
+			description_html: marked.parse(albums[0].description)
+		}
 	},
 
 	head () {
