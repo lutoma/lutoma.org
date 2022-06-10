@@ -78,9 +78,11 @@ export default {
 			return {}
 		}
 
+		const desc = albums[0].description
+
 		return {
 			album: albums[0],
-			description_html: marked.parse(albums[0].description)
+			description_html: desc ? marked.parse(desc) : ''
 		}
 	},
 
