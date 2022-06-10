@@ -2,7 +2,7 @@
 	<div class="photo-story">
 		<figure class="photo-wrapper" v-for="item of photos" :key="item.id" :id="`p${item.id}`">
 			<img
-				v-lazy="`${$axios.defaults.baseURL}${ item.photo.url }`"
+				v-lazy="getDefaultSize(item.photo)"
 				:data-srcset="buildSrcSet(item.photo)"
 				:sizes="buildSizes(item.photo)"
 				:alt="item.description"
@@ -81,6 +81,16 @@ export default {
 	},
 
 	methods: {
+		getDefaultSize(photo) {
+			let url = photo.url;
+			console.log(photo.formats)
+			if('large3k' in photo.formats) {
+				url = photo.formats.large3k.url;
+			}
+
+			return `${this.$axios.defaults.baseURL}${ url }`
+		},
+
 		buildSrcSet(photo) {
 			let formats = Object.values(photo.formats)
 			formats.sort((a, b) => a.width - b.width)
@@ -90,7 +100,11 @@ export default {
 				sources.push(`${this.$axios.defaults.baseURL}${fmt.url} ${fmt.width}w`)
 			}
 
-			sources.push(`${this.$axios.defaults.baseURL}${photo.url} ${photo.width}w`)
+			// Only push original image if large3k size is unavailable
+			if(!('large3k' in photo.formats)) {
+				sources.push(`${this.$axios.defaults.baseURL}${photo.url} ${photo.width}w`)
+			}
+
 			return sources.join(', ');
 		},
 		buildSizes(photo) {
@@ -102,7 +116,13 @@ export default {
 				sizes.push(`(max-width: ${fmt.width}px) ${fmt.width}w`)
 			}
 
-			sizes.push(`${photo.width}w`)
+			// Fallback/max size
+			if('large3k' in photo.formats) {
+				sizes.push('3000w')
+			} else {
+				sizes.push(`${photo.width}w`)
+			}
+
 			return sizes.join(', ');
 		}
 	}
