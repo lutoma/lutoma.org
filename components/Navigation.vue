@@ -21,7 +21,7 @@
 					<li><a href="https://twitter.com/lutoma" rel="me noopener" target="_blank"><fa :icon="['fab', 'twitter']" /></a></li>
 					<li><a href="https://instagram.com/lutoma123" rel="me noopener" target="_blank"><fa :icon="['fab', 'instagram']" /></a></li>
 					<li><a href="https://500px.com/p/lutoma" rel="me noopener" target="_blank"><fa :icon="['fab', '500px']" /></a></li>
-					<li><a href="https://chaos.social/@lutoma" rel="me noopener" target="_blank"><fa :icon="['fab', 'mastodon']" /></a></li>
+					<li><a href="https://ohai.social/@lutoma" rel="me noopener" target="_blank"><fa :icon="['fab', 'mastodon']" /></a></li>
 				</ul>
 			</div>
 		</div>
