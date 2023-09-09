@@ -11,12 +11,11 @@
 		<p>Alternatively you can reach me on these services, in order of preference:</p>
 
 		<ul>
-			<li><a href="https://matrix.to/#/@lutoma:ohai.su" target="_blank" rel="noopener">Matrix: @lutoma:ohai.su</a></li>
+			<li><a href="https://matrix.to/#/@lutoma:ohai.is" target="_blank" rel="noopener">Matrix: @lutoma:ohai.is</a></li>
 			<li>Signal</li>
+			<li><a href="https://discord.com/users/137698436043505665" target="_blank" rel="noopener">Discord: lutoma</a></li>
+			<li><a href="https://ohai.social/@lutoma" target="_blank" rel="noopener">Mastodon: @lutoma@ohai.social</a></li>
 			<li><a href="https://t.me/lutoma" target="_blank" rel="noopener">Telegram: @lutoma</a></li>
- 			<li><a href="https://discord.com/users/137698436043505665" target="_blank" rel="noopener">Discord: lutoma#7151</a></li>
-			<li><a href="https://chaos.social/@lutoma" target="_blank" rel="noopener">Mastodon: @lutoma@chaos.social</a></li>
-			<li><a href="https://twitter.com/lutoma" target="_blank" rel="noopener">Twitter: @lutoma</a></li>
 			<li><a href="imessage://hello@lutoma.org">iMessage: hello@lutoma.org</a></li>
 		</ul>
 	</div>
