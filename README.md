@@ -1,6 +1,14 @@
 # lutoma.org
 
-## Build Setup
+## Backend
+
+```bash
+$ poetry install
+$ poetry run ./manage.py migrate
+$ poetry run ./manage.py runserver
+```
+
+## Frontend
 
 ```bash
 # install dependencies

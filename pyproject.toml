@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "lutoma-org-api"
+version = "0.1.0"
+description = ""
+authors = ["Lukas Martini <hello@lutoma.org>"]
+readme = "README.md"
+packages = [{include = "lutoma"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0.3"
+django-activitypub = "^0.0.2"
+django-ninja = "^1.1.0"
+exif = "^1.6.0"
+pillow-heif = "^0.15.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

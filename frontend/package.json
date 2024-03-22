@@ -1,0 +1,36 @@
+{
+  "name": "lutoma.org",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@fontsource/fira-sans": "^4.2.0",
+    "@fontsource/rubik": "^4.2.0",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/pro-light-svg-icons": "^5.15.2",
+    "@fortawesome/pro-regular-svg-icons": "^5.15.2",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
+    "@yeger/vue-masonry-wall": "^5.0.8",
+    "core-js": "^3.8.2",
+    "humps": "^2.0.1",
+    "marked": "^4.0.16",
+    "nuxt": "^3.11.1",
+    "sass": "^1.72.0",
+    "sass-loader": "^10.1.1",
+    "vue-lazyload": "^3.0.0",
+    "vue-masonry-wall": "^0.3.2",
+    "vue-matomo": "^4.2.0"
+  },
+  "devDependencies": {
+    "add": "^2.0.6",
+    "v-click-outside": "^3.1.2",
+    "vue-cool-lightbox": "^2.7.1",
+    "yarn": "^1.22.10"
+  }
+}
